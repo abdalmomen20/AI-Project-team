@@ -1,0 +1,68 @@
+
+
+
+
+from collections import deque
+
+def is_safe(state, row, col):
+    """
+    Check if we can place a queen at (row, col)
+    without being attacked by previous queens.
+    """
+    for r, c in enumerate(state):
+        
+        if c == col:
+            return False
+        
+        if abs(r - row) == abs(c - col):
+            return False
+    return True
+
+
+def bfs_n_queens(n):
+    """
+    Solve n-Queens using BFS.
+    Each level in BFS represents placing a queen in the next row.
+    """
+    solutions = []
+    queue = deque([[]])  # start with empty state
+
+    while queue:
+        state = queue.popleft()
+        row = len(state)
+
+        
+        if row == n:
+            solutions.append(state)
+            continue
+
+        
+        for col in range(n):
+            if is_safe(state, row, col):
+                new_state = state + [col]
+                queue.append(new_state)
+
+    return solutions
+
+
+def pretty_print(solution):
+    """Print the solution as a chessboard."""
+    n = len(solution)
+    for r in range(n):
+        row_output = []
+        for c in range(n):
+            row_output.append("Q" if solution[r] == c else ".")
+        print(" ".join(row_output))
+    print()
+
+
+if __name__ == "__main__":
+    n = 5
+    solutions = bfs_n_queens(n)
+
+    print(f"Found {len(solutions)} solutions for {n}-Queens.\n")
+
+  
+    for i, sol in enumerate(solutions, start=1):
+        print(f"Solution {i}: {sol}")
+        pretty_print(sol)
