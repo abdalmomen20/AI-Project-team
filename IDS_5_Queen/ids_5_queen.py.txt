@@ -1,0 +1,33 @@
+N = 5
+
+def is_safe(state, row, col):
+    for r, c in enumerate(state):
+        if c == col or abs(c - col) == abs(r - row):
+            return False
+    return True
+
+def depth_limited_search(state, limit):
+    row = len(state)
+
+    if row == N:
+        return state
+
+    if row == limit:
+        return None
+
+    for col in range(N):
+        if is_safe(state, row, col):
+            result = depth_limited_search(state + [col], limit)
+            if result:
+                return result
+
+    return None
+
+def iterative_deepening_search():
+    for limit in range(1, N + 1):
+        result = depth_limited_search([], limit)
+        if result:
+            return result
+
+solution = iterative_deepening_search()
+print(solution)
