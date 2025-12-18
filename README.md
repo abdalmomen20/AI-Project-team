@@ -12,11 +12,11 @@ As we know, a Queen can move horizontally, vertically, and diagonally, so it isn
 |-------------|-------|----------|------|
 | عبدالمؤمن احمد فتحى احمد الصواف | C11 | 2023620 | Genetic Algorithm |
 | جمال وليد جمال الدين زكريا مهنا | C10 | 2023581 | Comparison between Algorithms |
-| يوسف محسن احمد علي مبارك | C12 | 2023691 | Iterative Deepening Search |
+| يوسف محسن احمد علي مبروك | C12 | 2023691 | Iterative Deepening Search |
 | عمرو ياسر جمال عبد الستار | C11 | 2023630 | Depth-First Search |
-| سيف عصام أبو الزيد الصياد | C10 | 2023596 | Breadth-First Search |
-| أدم احمد السيد حسن جمعه سلطان | C6 | 2023286 | Uniform-Cost Search |
-| محمد سمير السيد سعد هيكل | C7 | 2023369 | A* Search |
+| سيف عصام أبو اليزيد الصياد | C10 | 2023596 | Breadth-First Search |
+| أدهم احمد السيد حسن جمعه سلطان | C6 | 2023286 | Uniform-Cost Search |
+| محمد سمير السيد سعد هيلم | C7 | 2023369 | A* Search |
 
 ## Used Algorithms
 1. Breadth-First Search
