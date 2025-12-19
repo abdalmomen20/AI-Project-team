@@ -78,4 +78,4 @@ def five_queens(pop_size, max_generations, pc=0.7, pm=0.01):
     print()
     print(best_solution)
 
-five_queens(pop_size=100, max_generations=10000, pc=0.5, pm=0.05)
+five_queens(pop_size=10, max_generations=1000, pc=0.5, pm=0.05)
