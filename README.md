@@ -1,8 +1,9 @@
 # AI Project Proposal
 
 ## Problem Description
-Our problem is the 5-Queen Problem in which we need to place 5 Queens on a standard 5x5 chessboard where no two queens can attack each other.  
-As we know, a Queen can move horizontally, vertically, and diagonally, so it isn’t easy to place them alone. Therefore, as a team, we try to use some Uninformed, Informed, and Adversarial Search strategies.
+Our problem is 5-Queen Puzzle in which we need to place 5 Queens on a standard 5x5 chessboard where no queen can kill  another one.
+As we know Queen can move Horizontal, vertical and diagonal so it isn’t easy to place them alone so as a team we try to use some Uninformed, Informed and Adversarial Search strategies to solve it and we make N equal 5 for example to compare between each algorithm performance.
+
 
 ## Team Member Roles
 
