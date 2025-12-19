@@ -9,33 +9,23 @@ def is_safe(state, row, col):
     return True
 
 def heuristic(state):
-    conflicts = 0
-    for i in range(len(state)):
-        for j in range(i + 1, len(state)):
-            if state[i] == state[j] or abs(state[i] - state[j]) == abs(i - j):
-                conflicts += 1
-    return conflicts
+    return N - len(state)
 
 def astar_5_queens():
-    priority_queue = []
-    heapq.heappush(priority_queue, (0, 0, []))  # (f, g, state)
+    pq = []
+    heapq.heappush(pq, (heuristic([]), 0, []))
 
-    while priority_queue:
-        f, g, state = heapq.heappop(priority_queue)
-        row = len(state)
+    while pq:
+        f, g, state = heapq.heappop(pq)
 
-        if row == N and heuristic(state) == 0:
+        if len(state) == N:
             return state
 
         for col in range(N):
-            if is_safe(state, row, col):
+            if is_safe(state, len(state), col):
                 new_state = state + [col]
                 g_new = g + 1
-                h_new = heuristic(new_state)
-                f_new = g_new + h_new
-                heapq.heappush(priority_queue, (f_new, g_new, new_state))
+                f_new = g_new + heuristic(new_state)
+                heapq.heappush(pq, (f_new, g_new, new_state))
 
-    return None
-
-solution = astar_5_queens()
-print(solution)
+print(astar_5_queens())
