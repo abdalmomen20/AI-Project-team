@@ -1,14 +1,11 @@
-N = 5  # حجم الرقعة
+N = 5
 board = [[0 for _ in range(N)] for _ in range(N)]
 
-# دالة للتحقق إذا كان المكان آمن
 def is_safe(row, col):
-    # التحقق من نفس العمود
     for i in range(row):
         if board[i][col] == 1:
             return False
 
-    # التحقق من القطر الأساسي
     i, j = row, col
     while i >= 0 and j >= 0:
         if board[i][j] == 1:
@@ -16,7 +13,6 @@ def is_safe(row, col):
         i -= 1
         j -= 1
 
-    # التحقق من القطر العكسي
     i, j = row, col
     while i >= 0 and j < N:
         if board[i][j] == 1:
@@ -26,7 +22,6 @@ def is_safe(row, col):
 
     return True
 
-# دالة DFS / Backtracking
 def dfs(row):
     if row == N:
         for r in board:
@@ -36,9 +31,8 @@ def dfs(row):
 
     for col in range(N):
         if is_safe(row, col):
-            board[row][col] = 1  # ضع الملكة
-            dfs(row + 1)          # روح للصف التالي
-            board[row][col] = 0   # تراجع (Backtrack)
+            board[row][col] = 1
+            dfs(row + 1)
+            board[row][col] = 0
 
-# ابدأ من الصف الأول
 dfs(0)
